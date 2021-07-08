@@ -1,0 +1,17 @@
+{
+    "name": "Case Search Forever",
+    "description": "Never see that goddamn disclaimer page again.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "alarms",
+        "cookies"
+    ],
+    "host_permissions": [
+        "https://casesearch.courts.state.md.us/*",
+        "https://api.acab.enterprises/mjcsproxy/*"
+    ]
+}
