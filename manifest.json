@@ -1,6 +1,6 @@
 {
     "name": "Case Search Forever",
-    "description": "Never see that goddamn disclaimer page again.",
+    "description": "Use the Maryland Judiciary Case Search without having to click through the disclaimer.",
     "version": "1.0",
     "manifest_version": 3,
     "background": {
@@ -8,10 +8,18 @@
     },
     "permissions": [
         "alarms",
-        "cookies"
+        "cookies",
+        "declarativeNetRequest"
     ],
     "host_permissions": [
         "https://casesearch.courts.state.md.us/*",
         "https://api.acab.enterprises/mjcsproxy/*"
-    ]
+    ],
+    "declarative_net_request": {
+        "rule_resources" : [{
+            "id": "ruleset_1",
+            "enabled": true,
+            "path": "rules.json"
+        }]
+    }
 }
