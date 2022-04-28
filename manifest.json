@@ -1,25 +1,19 @@
 {
     "name": "Case Search Forever",
-    "description": "Use the Maryland Judiciary Case Search without having to click through the disclaimer.",
+    "description": "Use the Maryland Judiciary Case Search without having to click through the CAPTCHA.",
     "version": "1.0",
     "manifest_version": 3,
-    "background": {
-        "service_worker": "background.js"
-    },
-    "permissions": [
-        "alarms",
-        "cookies",
-        "declarativeNetRequest"
-    ],
+    "content_scripts": [
+        {
+          "matches": [
+            "https://casesearch.courts.state.md.us/casesearch/processDisclaimer.jis",
+            "https://casesearch.courts.state.md.us/casesearch/inquirySearchParam.jis"
+          ],
+          "js": ["run.js"]
+        }
+      ],
     "host_permissions": [
         "https://casesearch.courts.state.md.us/*",
         "https://api.acab.enterprises/mjcsproxy/*"
-    ],
-    "declarative_net_request": {
-        "rule_resources" : [{
-            "id": "ruleset_1",
-            "enabled": true,
-            "path": "rules.json"
-        }]
-    }
+    ]
 }
