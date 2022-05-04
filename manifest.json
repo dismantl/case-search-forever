@@ -1,14 +1,15 @@
 {
     "name": "Case Search Forever",
-    "description": "Use the Maryland Judiciary Case Search without having to click through the CAPTCHA.",
-    "version": "1.0.1",
+    "description": "Use the Maryland Judiciary Case Search without having to click through the CAPTCHA or disclaimer page.",
+    "version": "1.0.2",
     "manifest_version": 3,
     "content_scripts": [
         {
           "matches": [
             "https://casesearch.courts.state.md.us/casesearch/processDisclaimer.jis",
             "https://casesearch.courts.state.md.us/casesearch/inquirySearchParam.jis",
-            "https://casesearch.courts.state.md.us/casesearch/inquirySearch.jis"
+            "https://casesearch.courts.state.md.us/casesearch/inquirySearch.jis",
+            "https://casesearch.courts.state.md.us/casesearch/inquiry-index.jsp"
           ],
           "js": ["run.js"]
         }
