@@ -2,10 +2,11 @@
     "name": "Case Search Forever",
     "description": "Use the Maryland Judiciary Case Search without having to click through the CAPTCHA or disclaimer page.",
     "version": "1.0.2",
-    "manifest_version": 3,
+    "manifest_version": 2,
     "content_scripts": [
         {
           "matches": [
+            "https://casesearch.courts.state.md.us/casesearch/",
             "https://casesearch.courts.state.md.us/casesearch/processDisclaimer.jis",
             "https://casesearch.courts.state.md.us/casesearch/inquirySearchParam.jis",
             "https://casesearch.courts.state.md.us/casesearch/inquirySearch.jis",
@@ -14,7 +15,8 @@
           "js": ["run.js"]
         }
       ],
-    "host_permissions": [
+    "permissions": [
         "https://casesearch.courts.state.md.us/*"
     ]
 }
+
